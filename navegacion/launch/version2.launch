@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <launch>
+   <param name="robot_description" command="cat $(find navegacion)Robot2URDF.urdf" />
+
+   
+   <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" ></node>
+
+   <node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher" />
+   <node name="odometria" pkg="navegacion" type="odometria" />
+   
+   <node name="tf_robot" pkg="navegacion" type="tf_robot"/>
+   
+   <!--node pkg="tf" type="static_transform_publisher" name="base_to_kt_broadcaster" args="0 0 0 0 0 0 base_link camera_depth_frame 100" >
+   </node>
+
+   <node pkg="tf" type="static_transform_publisher" name="base_to_kinect_broadcaster" args="0 0 0 0 0 0 camera_depth_frame camera_link 100" >
+   </node-->
+
+   <node name="rviz" pkg="rviz" type="rviz" args="-d $(find navegacion)/rviz/config_robot.rviz" output="screen" />
+ </launch>

@@ -1,0 +1,6 @@
+<launch>
+        <param name="robot_description" command="cat $(find navegacion)Robot2URDF.urdf" />
+        <node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher" />
+        <node name="odometria" pkg="navegacion" type="odometria" />
+        <node type="rviz" name="rviz" pkg="rviz" args="-d $(find navegacion)/rviz/config_file.rviz" />
+</launch>
