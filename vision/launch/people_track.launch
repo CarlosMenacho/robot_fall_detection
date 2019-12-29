@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+	<node name="haar_ros" pkg="vision" type="haar_ros.py" output="screen"/>
+	<node name="image_converter" pkg="vision" type="image_converter.py" output="screen"/>
+	<node name="get_distance" pkg="vision" type="get_distance.py" output="screen"/>
+</launch>

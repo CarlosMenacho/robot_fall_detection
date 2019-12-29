@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+	<node name="peopleDetector" pkg="vision" type="peopleDetector.py" output="screen"/>
+	<node name ="falling" pkg="vision" type="falling.py" output="screen"/>
+	
+</launch>
